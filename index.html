@@ -238,16 +238,57 @@
     </div>
   </section>
 
+  <section>
+    <div class="container">
+      <h2>מה קרה לנו?</h2>
+      <div style="max-width: 800px; margin: 0 auto; text-align: right;">
+        <p>הכול נהיה מסובך. במציאות מורכבת, אנשים נוטים לבחור צד ולהחזיק בו בכל הכוח – יחד עם כל החבילה שהוא מביא איתו. זו תגובה טבעית; היא מפשטת את החיים. ואם משהו לא מסתדר? תמיד אפשר להסביר דרך תיאוריית קונספירציה.</p>
+        <br>
+        <p>אבל האמת היא שאין פתרונות פשוטים. <b>לרבים מהאתגרים אין אפילו פתרון – אלא רק דרך נבונה לנווט בתוכם.</b></p>
+        <br>
+        <p>שלום מלא ואמיתי עם הפלסטינאים? לא מרגיש ריאלי. מולנו פועלים כוחות פונדמנטליסטיים עוצמתיים. האמונה ש"כולם בעצם רוצים שלום והרמוניה" מתעלמת מהכוח ההיסטורי והרגשי של הדת.</p>
+        <br>
+        <p>ומהצד השני – גם גישות כוחניות לא מצליחות. לשלוט? לגרש? להרעיב? זה לא עובד. אפשר להפעיל כוח בלתי מוגבל, ועדיין לא תבוא כניעה. תראו את יחס הנזק בין ישראל לחות'ים – אחד לאלף – והם ממשיכים.</p>
+        <br>
+        <p>גם בזירה הפנימית, בין דמוקרטיה לבג"ץ, אין פתרונות קלים. בג"ץ מייצג ערכים מערביים נאורים – השאלה היא אם ניתן לשרוד כאן עם מגבלות כאלו. מצד שני, מדינת ישראל כפי שאנחנו אוהבים אותה התעצבה דווקא תחת הערכים האלו. אנחנו לא רוצים להפוך לרוסיה או לסין. אין תשובה פשוטה. זה מורכב – ואולי לא פתיר.</p>
+        <br>
+        <p>ויש גם את הקונפליקט העדתי, שממשיך להזין את השסע הפנימי. כן, הייתה אפליה – כמו שקורה כמעט תמיד עם גלי הגירה – ולוקח זמן עד שהיחס מתאזן. אבל כיום, רבים מיוצאי עדות המזרח עצמם סבורים שהמצב השתנה באופן עמוק, ושהטענות על אפליה הפכו למוגזמות. הם מצביעים על שילוב רחב כמעט בכל תחום – בתרבות, בצבא, בפוליטיקה, באקדמיה ובעסקים. משפחות כמו משפחת בנאי הן רק דוגמה אחת להשתלבות הזו. ועדיין, עבור חלקים מהחברה, תחושת הקיפוח נותרת רכיב בזהות – וממשיכה ללבות מחלוקות גם כשלעיתים היא כבר לא תואמת את המציאות.</p>
+        <br>
+        <p>בקיצור, לא פשוט. אבל בואו ננסה לעשות את זה יחד, כמו פעם.</p>
+      </div>
+    </div>
+  </section>
 
   <section class="cta">
     <div class="container">
-      <h2>הצטרפו אלינו</h2>
-      <p>ביחד נחזיר את ישראל למה שהיא יכולה להיות.</p>
+      <p>ביחד נחזיר את ישראל למה שהיא יכולה להיות</p>
       <div class="cta-buttons">
-        <a href="#" class="cta-button">📩 הירשמו לעדכונים</a>
-        <a href="#" class="cta-button">🤝 הצטרפו לקבוצת הווטסאפ</a>
-        <a href="#" class="cta-button">📣 שתפו את האתר</a>
-        <a href="#" class="cta-button">✉️ כתבו לנו</a>
+        <form id="submit-form" style="width: 100%; max-width: 400px; margin: 0 auto;">
+          <input type="email" name="email" placeholder="לקבלת עידכונים הכניסו את כתובת האימייל שלכם" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px;">
+          <button type="submit" style="width: 100%; padding: 10px; background-color: #4a90e2; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: 500;">לחצו כאן וקוו לטוב :)</button>
+        </form>
+        
+        <script>
+        document.getElementById('submit-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const formData = new FormData();
+          formData.append('email', this.querySelector('input[name="email"]').value);
+          
+          fetch("https://script.google.com/macros/s/AKfycbxJkW4PnGfhoCZ76gCZk1VwosXI-lnvyVwlL1QgM55cGXFwcTrYqxaoEJXcEN9rfyIg3Q/exec", {
+            method: "POST",
+            body: formData,
+            mode: 'no-cors'
+          })
+          .then(() => {
+            alert("נרשמת בהצלחה!");
+            this.reset();
+          })
+          .catch(err => {
+            alert("אירעה שגיאה בהרשמה");
+            console.error(err);
+          });
+        });
+        </script>
       </div>
     </div>
   </section>
